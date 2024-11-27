@@ -1,0 +1,3 @@
+[submodule "front_app"]
+	path = Diplomski_rad_RA_52_2017_front_app
+	url = https://github.com/repovic48/Diplomski_rad_RA_52_2017_front_app.git
