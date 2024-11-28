@@ -1,0 +1,60 @@
+version: "3.8"
+
+services:
+
+  gateway:
+    image: nginx:1.20.0-alpine
+    ports:
+      - 8080:8080
+    networks:
+      - backend
+    volumes:
+      - ./Gateway/nginx.conf:/etc/nginx/nginx.conf
+      - ./Gateway/api_gateway.conf:/etc/nginx/api_gateway.conf
+
+  user-service:
+    image: user-service:compose_build
+    build:
+      context: ./user-service
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    environment:
+      PORT: 8081
+
+  order-service:
+    image: order-service:compose_build
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    environment:
+      PORT: 8082
+
+  restaurant-service:
+    image: restaurant-service:compose_build
+    build:
+      context: ./restaurant-service
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    environment:
+      PORT: 8083
+
+  comment-service:
+    image: comment-service:compose_build
+    build:
+      context: ./comment-service
+      dockerfile: Dockerfile
+    networks:
+      - backend
+    environment:
+      PORT: 8084
+
+volumes:
+  data-users:
+
+networks:
+  backend:
+    driver: bridge
