@@ -1,3 +1,5 @@
+using order_service.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
@@ -7,10 +9,12 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 
 builder.AddServiceDefaults();
 
+builder.Services.AddScoped<IOrderService, OrderService>();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+    
 var app = builder.Build();
 
 app.MapDefaultEndpoints();

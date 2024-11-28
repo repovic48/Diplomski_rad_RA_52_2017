@@ -1,3 +1,5 @@
+using restaurant_service.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.ConfigureKestrel(serverOptions =>
@@ -6,6 +8,8 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 });
 
 builder.AddServiceDefaults();
+
+builder.Services.AddScoped<IRestaurantService, RestaurantService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
