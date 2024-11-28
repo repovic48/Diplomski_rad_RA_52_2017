@@ -1,4 +1,5 @@
 using comment_service.Services;
+using comment_service.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 builder.AddServiceDefaults();
 
 builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

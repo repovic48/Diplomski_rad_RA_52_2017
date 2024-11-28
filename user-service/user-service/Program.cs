@@ -1,4 +1,5 @@
 using user_service.Services;
+using user_service.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.WebHost.ConfigureKestrel(serverOptions =>
 builder.AddServiceDefaults();
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

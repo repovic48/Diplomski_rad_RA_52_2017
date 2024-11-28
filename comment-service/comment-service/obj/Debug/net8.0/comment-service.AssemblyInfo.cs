@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("comment-service")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+44e5b29a0f6c8c7e75710b3886b5956af02c2506")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+38d537a81898313f7cc87e95723feca90cb78ea6")]
 [assembly: System.Reflection.AssemblyProductAttribute("comment-service")]
 [assembly: System.Reflection.AssemblyTitleAttribute("comment-service")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
