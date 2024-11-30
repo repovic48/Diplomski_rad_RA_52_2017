@@ -1,0 +1,13 @@
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\bin\Debug\net8.0\comment-service.ServiceDefaults.deps.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\bin\Debug\net8.0\comment-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\bin\Debug\net8.0\comment-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.AssemblyInfo.cs
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.sourcelink.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\refint\comment-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\comment-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\comment-service\comment-service.ServiceDefaults\obj\Debug\net8.0\ref\comment-service.ServiceDefaults.dll

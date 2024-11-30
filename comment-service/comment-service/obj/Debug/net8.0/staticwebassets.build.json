@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "WdzFRJvD3qJ/e8NuZahuleUUw9ujqIa5WMG52xUewF8=",
+  "Source": "comment-service",
+  "BasePath": "_content/comment-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

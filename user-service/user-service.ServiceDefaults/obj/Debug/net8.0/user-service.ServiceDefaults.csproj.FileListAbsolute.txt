@@ -1,0 +1,13 @@
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\bin\Debug\net8.0\user-service.ServiceDefaults.deps.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\bin\Debug\net8.0\user-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\bin\Debug\net8.0\user-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.AssemblyInfo.cs
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.sourcelink.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\refint\user-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\user-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.ServiceDefaults\obj\Debug\net8.0\ref\user-service.ServiceDefaults.dll

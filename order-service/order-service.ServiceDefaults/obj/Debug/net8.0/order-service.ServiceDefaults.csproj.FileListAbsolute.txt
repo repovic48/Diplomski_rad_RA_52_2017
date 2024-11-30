@@ -1,0 +1,13 @@
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\bin\Debug\net8.0\order-service.ServiceDefaults.deps.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\bin\Debug\net8.0\order-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\bin\Debug\net8.0\order-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.csproj.AssemblyReference.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.AssemblyInfoInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.AssemblyInfo.cs
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.sourcelink.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\refint\order-service.ServiceDefaults.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\order-service.ServiceDefaults.pdb
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\order-service\order-service.ServiceDefaults\obj\Debug\net8.0\ref\order-service.ServiceDefaults.dll

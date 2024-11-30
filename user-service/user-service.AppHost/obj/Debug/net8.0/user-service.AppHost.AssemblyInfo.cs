@@ -25,7 +25,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("user-service.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e9facc08fac743ea0ebb41ff230123b328c70e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fbaea44a9da5308bd23fb4fe429c4a07e0fd6e4f")]
 [assembly: System.Reflection.AssemblyProductAttribute("user-service.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("user-service.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
