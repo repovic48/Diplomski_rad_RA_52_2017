@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using user_service.Services;
+using user_service.Model;
 
 namespace user_service.Controllers;
 
@@ -17,5 +18,27 @@ public class UserController : ControllerBase
     public string SayHello()
     {
         return this.user_service.SayHello();
+    }
+    
+    [HttpPost("registerUser")]
+    public async Task<IActionResult> RegisterUser([FromBody] UserDTO userDto)
+    {
+        if (userDto == null)
+        {
+            return BadRequest("Invalid user data.");
+        }
+        try
+        {
+            var new_user = await user_service.RegisterUser(userDto);
+            return CreatedAtAction(nameof(RegisterUser), new { id = new_user.id }, new_user);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
 }

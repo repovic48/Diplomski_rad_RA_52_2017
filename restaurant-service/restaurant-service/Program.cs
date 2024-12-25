@@ -28,11 +28,9 @@ var app = builder.Build();
 
 app.MapDefaultEndpoints();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
+app.ApplyMigrations();
 
 app.UseAuthorization();
 app.MapControllers();

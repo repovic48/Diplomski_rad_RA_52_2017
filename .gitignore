@@ -1,2 +1,85 @@
-*.vs
-*.dll
+# Ignore build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Dd]istro/
+[Dd]ist/
+[Dd]ebug/
+[Dd]ebug
+[Dd]ebug-x64/
+[Dd]ebug-x86/
+[Dd]istro/
+
+# Ignore build output directories
+bin/
+obj/
+
+# Ignore user-specific files
+.vs/
+.vscode/
+.idea/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+
+# Windows Installer Service files
+*.mst
+
+# Tye generated files
+.tye/
+
+# Rider IDE
+.idea/
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# JetBrains Rider specific files
+.idea/
+
+# Ignore configuration and environment files
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+appsettings.Staging.json
+
+# Azure Functions (for Azure)
+local.settings.json
+
+# Ignore IntelliJ IDEA specific files (optional)
+*.iml
+
+# Ignore all log files
+*.log
+
+# Ignore JetBrains Rider's temp files
+.idea/.idea/
+
+# Ignore NuGet packages (if not using package restore)
+*.nupkg
+
+# Ignore VS2019 and later settings (optional)
+.vscode/
+
+# Ignore global tools cache
+/.dotnet/tools/
+
+# Ignore local cache for dotnet
+*.db
+
+# Ignore Visual Studio for Mac
+.vscode/
+
+# Ignore Windows Installer files
+*.cab
+*.msi
+*.msm

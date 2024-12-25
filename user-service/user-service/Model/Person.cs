@@ -1,16 +1,35 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace user_service.Model
 {
     public class Person
     {
         [Key]
-        public required string user_id { get; set; }
-        public required string name { get; set; }
-        public required string surname { get; set; }
-        public required string password { get; set; }
-        public required string email { get; set; }
-        public required string address { get; set; }
+        public string id { get; set; }
+        [Required]
+        public  string name { get; set; }
+        [Required]
+        public  string surname { get; set; }
+        [Required]
+        public  string password { get; set; }
+
+        [Required]
+        public string email { get; set; }
+        [Required]
+        public  string address { get; set; }
+        [Required]
         public int postal_code { get; set; }
+
+        public Person(string id, string name, string surname, string password, string email, string address, int postal_code)
+        {
+            this.id = id;
+            this.name = name;
+            this.surname = surname;
+            this.password = password;
+            this.email = email;
+            this.address = address;
+            this.postal_code = postal_code;
+        }
     }
 }

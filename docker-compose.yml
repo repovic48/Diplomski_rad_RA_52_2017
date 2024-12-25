@@ -1,7 +1,6 @@
-version: "3.8"
+version: '3.4'
 
 services:
-
   gateway:
     image: nginx:1.20.0-alpine
     ports:
@@ -21,6 +20,13 @@ services:
       - backend
     environment:
       PORT: 8081
+      DB_HOST: db  # Set the database service name (container name)
+      DB_PORT: 5432
+      DB_NAME: Diplomski_rad
+      DB_USER: postgres
+      DB_PASSWORD: nekatamosifra1
+    depends_on:
+      - db  # Wait for the db service to be ready before starting
 
   order-service:
     image: order-service:compose_build
@@ -31,6 +37,13 @@ services:
       - backend
     environment:
       PORT: 8082
+      DB_HOST: db  # Set the database service name (container name)
+      DB_PORT: 5432
+      DB_NAME: Diplomski_rad
+      DB_USER: postgres
+      DB_PASSWORD: nekatamosifra1
+    depends_on:
+      - db  # Ensure order-service waits for the db service
 
   restaurant-service:
     image: restaurant-service:compose_build
@@ -41,6 +54,13 @@ services:
       - backend
     environment:
       PORT: 8083
+      DB_HOST: db  # Set the database service name (container name)
+      DB_PORT: 5432
+      DB_NAME: Diplomski_rad
+      DB_USER: postgres
+      DB_PASSWORD: nekatamosifra1
+    depends_on:
+      - db  # Ensure restaurant-service waits for the db service
 
   comment-service:
     image: comment-service:compose_build
@@ -51,10 +71,32 @@ services:
       - backend
     environment:
       PORT: 8084
+      DB_HOST: db  # Set the database service name (container name)
+      DB_PORT: 5432
+      DB_NAME: Diplomski_rad
+      DB_USER: postgres
+      DB_PASSWORD: nekatamosifra1
+    depends_on:
+      - db  # Ensure comment-service waits for the db service
 
-volumes:
-  data-users:
+  db:  # PostgreSQL service
+    container_name: db
+    image: postgres:latest
+    networks:
+      - backend
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: nekatamosifra1
+      POSTGRES_DB: Diplomski_rad
+    ports:
+      - "5432:5432"  # Expose PostgreSQL to the host system
+    restart: always
+    volumes:
+      - ./.containers/products-db:/var/lib/postgresql/data
 
 networks:
   backend:
     driver: bridge
+
+volumes:
+  postgres_data:

@@ -21,18 +21,31 @@ namespace user_service.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("user_service.Model.Person", b =>
+            modelBuilder.Entity("user_service.Model.User", b =>
                 {
-                    b.Property<string>("user_id")
+                    b.Property<string>("id")
                         .HasColumnType("text");
 
                     b.Property<string>("address")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("card_number")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("email")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("is_account_active")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("is_account_suspended")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("loyalty_points")
+                        .HasColumnType("integer");
 
                     b.Property<string>("name")
                         .IsRequired()
@@ -49,9 +62,12 @@ namespace user_service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("user_id");
+                    b.HasKey("id");
 
-                    b.ToTable("Persons");
+                    b.HasIndex("email")
+                        .IsUnique();
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

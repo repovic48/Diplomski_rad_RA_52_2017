@@ -1,3 +1,11 @@
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.csproj.AssemblyReference.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.AssemblyInfoInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.AssemblyInfo.cs
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.csproj.CoreCompileInputs.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.sourcelink.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\appsettings.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\user-service.staticwebassets.endpoints.json
@@ -185,14 +193,6 @@ C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\user-service.ServiceDefaults.dll
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\bin\Debug\net8.0\user-service.ServiceDefaults.pdb
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.csproj.AssemblyReference.cache
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.AssemblyInfoInputs.cache
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.AssemblyInfo.cs
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.csproj.CoreCompileInputs.cache
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\user-service.sourcelink.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\scopedcss\bundle\user-service.styles.css
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\obj\Debug\net8.0\staticwebassets.development.json
