@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class user_service : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """c:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\user-service.csproj""";
+    public string ProjectPath => """C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service\user-service.csproj""";
 }

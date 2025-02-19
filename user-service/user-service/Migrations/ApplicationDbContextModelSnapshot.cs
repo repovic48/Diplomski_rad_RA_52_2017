@@ -62,6 +62,9 @@ namespace user_service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("verification_code")
+                        .HasColumnType("integer");
+
                     b.HasKey("id");
 
                     b.HasIndex("email")

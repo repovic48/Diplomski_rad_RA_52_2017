@@ -8,5 +8,5 @@ namespace Projects;
 public class user_service_AppHost
 {
     private user_service_AppHost() { }
-    public static string ProjectPath => """c:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.AppHost""";
+    public static string ProjectPath => """C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\user-service\user-service.AppHost""";
 }

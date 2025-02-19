@@ -41,4 +41,74 @@ public class UserController : ControllerBase
             return StatusCode(500, $"Internal server error: {ex.Message}");
         }
     }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] UserDTO userDto)
+    {
+        if (userDto == null)
+        {
+            return BadRequest("Invalid user data.");
+        }
+
+        try
+        {
+            var existingUser = await user_service.Login(userDto);
+
+            if (existingUser == null)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            return Ok(existingUser); 
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("getAllUsers")]
+    public async Task<IActionResult> GetAllUsers()
+    {
+        try
+        {
+            var users = await user_service.GetAllUsers();
+
+            // If there are no users, return a 404 Not Found
+            if (users == null || users.Count == 0)
+            {
+                return NotFound("No users found.");
+            }
+            
+            return Ok(users);  // Return 200 OK with the list of users
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpDelete("delete/{email}")]
+    public async Task<IActionResult> DeleteUserByEmail(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return BadRequest("Email cannot be null or empty");
+        }
+
+        var result = await user_service.DeleteUserByEmail(email);
+
+        if (result)
+        {
+            return Ok($"User with email {email} deleted successfully.");
+        }
+        else
+        {
+            return NotFound($"User with email {email} not found.");
+        }
+    }
 }

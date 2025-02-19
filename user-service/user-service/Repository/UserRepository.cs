@@ -19,6 +19,22 @@ namespace user_service.Repositories
             return "Hello from user REST microservice :)";
         }
 
+        public async Task<bool> DeleteUserByEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                throw new ArgumentException("Email cannot be null or empty", nameof(email));
+
+            var user = await context.Users
+                .FirstOrDefaultAsync(u => u.email == email);
+
+            if (user == null)
+                return false;
+
+            context.Users.Remove(user);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
         public async Task<User> RegisterUser(User new_user)
         {
             if (new_user == null)
@@ -31,6 +47,18 @@ namespace user_service.Repositories
             await context.SaveChangesAsync();
 
             return new_user;
+        }
+        public async Task<List<User>> GetAllUsers()
+        {
+            return await context.Users.ToListAsync();
+        }
+        public async Task<User?> GetUserByEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                throw new ArgumentException("Email cannot be null or empty", nameof(email));
+
+            return await context.Users
+                .FirstOrDefaultAsync(user => user.email == email);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace user_service.Model
         public int loyalty_points { get; set; }
         public bool is_account_active { get; set; }
         public bool is_account_suspended { get; set; }
-
+        public int verification_code { get; set; }
         public User(UserDTO userDTO)
             : base(userDTO.id, userDTO.name, userDTO.surname, userDTO.password, userDTO.email, userDTO.address, userDTO.postal_code)
         {

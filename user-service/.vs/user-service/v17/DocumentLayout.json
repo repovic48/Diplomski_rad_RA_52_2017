@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{57C98D48-7409-4389-9E24-B0D83CFC3231}|user-service\\user-service.csproj|c:\\users\\aleksa\\desktop\\diplomski_rad\\diplomski_rad_ra_52_2017\\user-service\\user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C98D48-7409-4389-9E24-B0D83CFC3231}|user-service\\user-service.csproj|solutionrelative:user-service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{57C98D48-7409-4389-9E24-B0D83CFC3231}|user-service\\user-service.csproj|c:\\users\\aleksa\\desktop\\diplomski_rad\\diplomski_rad_ra_52_2017\\user-service\\user-service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{57C98D48-7409-4389-9E24-B0D83CFC3231}|user-service\\user-service.csproj|solutionrelative:user-service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,8 +18,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\user-service\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "user-service\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\user-service\\Controllers\\UserController.cs",
+              "RelativeToolTip": "user-service\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAiwGYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T16:56:20.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\user-service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "user-service\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\user-service\\Services\\UserService.cs",
+              "RelativeToolTip": "user-service\\Services\\UserService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAiwEoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-15T16:55:51.282Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
