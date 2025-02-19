@@ -48,6 +48,26 @@ namespace user_service.Repositories
 
             return new_user;
         }
+
+        public async Task<User> UpdateUser(User updated_user)
+        {
+            if (updated_user == null)
+            {
+                throw new ArgumentNullException(nameof(updated_user), "Updated user cannot be null");
+            }
+
+            var existingUser = await context.Users.FindAsync(updated_user.id);
+            if (existingUser == null)
+            {
+                throw new KeyNotFoundException($"User with ID {updated_user.id} not found");
+            }
+
+            context.Entry(existingUser).CurrentValues.SetValues(updated_user);
+            await context.SaveChangesAsync();
+
+            return existingUser;
+        }
+
         public async Task<List<User>> GetAllUsers()
         {
             return await context.Users.ToListAsync();

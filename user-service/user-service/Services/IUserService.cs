@@ -10,5 +10,7 @@ namespace user_service.Services
         public Task<User?> Login(UserDTO userDTO);
         public Task<List<User>> GetAllUsers();
         public Task<bool> DeleteUserByEmail(string email);
+        public Task<User?> VerifyAccount(UserDTO userDTO);
+        public Task<User?> UpdateUser(UserDTO userDTO);
     }
 }

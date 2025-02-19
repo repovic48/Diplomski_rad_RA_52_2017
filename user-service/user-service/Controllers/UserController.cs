@@ -111,4 +111,39 @@ public class UserController : ControllerBase
             return NotFound($"User with email {email} not found.");
         }
     }
+
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTO)
+    {
+        if (userDTO == null)
+        {
+            return BadRequest("User data cannot be null.");
+        }
+
+        var updatedUser = await user_service.UpdateUser(userDTO);
+        if (updatedUser == null)
+        {
+            return NotFound("User not found or unable to update.");
+        }
+
+        return Ok(updatedUser);
+    }
+
+    [HttpPut("verify")]
+    public async Task<IActionResult> VerifyAccount([FromBody] UserDTO userDTO)
+    {
+        if (userDTO == null)
+        {
+            return BadRequest("User data cannot be null.");
+        }
+
+        var verifiedUser = await user_service.VerifyAccount(userDTO);
+        if (verifiedUser == null)
+        {
+            return NotFound("User not found or verification failed.");
+        }
+
+        return Ok(verifiedUser);
+    }
+
 }

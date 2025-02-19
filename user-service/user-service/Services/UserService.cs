@@ -32,8 +32,43 @@ namespace user_service.Services
             new_user.verification_code = verification_code;
 
             await SendEmail(new_user.email, new_user.verification_code);
-            
+
             return await this.user_repository.RegisterUser(new_user);
+        }
+
+        public async Task<User?> UpdateUser(UserDTO userDTO)
+        {
+            User tempUser = new User(userDTO);
+
+            if (tempUser != null)
+            {
+                var existingUser = await user_repository.GetUserByEmail(tempUser.email);
+                if(existingUser != null){
+                    var updated_user = await user_repository.UpdateUser(tempUser);
+                    return updated_user;
+                }
+            }
+
+            return null;
+        }
+
+        public async Task<User?> VerifyAccount(UserDTO userDTO)
+        {
+            User tempUser = new User(userDTO);
+            
+            if (tempUser != null)
+            {   
+                var existingUser = await user_repository.GetUserByEmail(tempUser.email);
+                if(existingUser != null && existingUser.verification_code == tempUser.verification_code){
+                    existingUser.is_account_active = true;
+                    return await user_repository.UpdateUser(existingUser);
+                }
+                else{
+                    return null;
+                }
+            }
+
+            return null;
         }
 
         public async Task<User?> Login(UserDTO userDTO)
