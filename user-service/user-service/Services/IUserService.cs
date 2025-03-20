@@ -7,7 +7,7 @@ namespace user_service.Services
         string SayHello();
 
         public Task<User> RegisterUser(UserDTO new_userDTO);
-        public Task<User?> Login(UserDTO userDTO);
+        public Task<string> Login(UserDTO userDTO);
         public Task<List<User>> GetAllUsers();
         public Task<bool> DeleteUserByEmail(string email);
         public Task<User?> VerifyAccount(UserDTO userDTO);

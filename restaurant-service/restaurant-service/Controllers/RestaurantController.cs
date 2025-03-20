@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using restaurant_service.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace restaurant_service.Controllers;
 
@@ -14,6 +15,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpGet("SayHello")]
+    [Authorize(Roles = "User")]
     public string SayHello()
     {
         return this.restaurant_service.SayHello();

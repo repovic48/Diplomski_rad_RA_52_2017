@@ -12,10 +12,12 @@ namespace user_service.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository user_repository;
+        private readonly TokenProvider token_provider;
 
-        public UserService(IUserRepository user_repository)
+        public UserService(IUserRepository user_repository, TokenProvider token_provider)
         {
             this.user_repository = user_repository;
+            this.token_provider = token_provider;
         }
 
         public string SayHello()
@@ -71,7 +73,7 @@ namespace user_service.Services
             return null;
         }
 
-        public async Task<User?> Login(UserDTO userDTO)
+        public async Task<string> Login(UserDTO userDTO)
         {
             User tempUser = new User(userDTO);
 
@@ -79,7 +81,8 @@ namespace user_service.Services
 
             if (existingUser != null && existingUser.password == tempUser.password)
             {
-                return existingUser;
+                string token = token_provider.Create(existingUser);
+                return token;
             }
 
             return null;

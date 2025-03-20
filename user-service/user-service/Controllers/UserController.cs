@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using user_service.Services;
 using user_service.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace user_service.Controllers;
 
@@ -15,6 +16,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("SayHello")]
+    [Authorize(Roles = "User")]
     public string SayHello()
     {
         return this.user_service.SayHello();

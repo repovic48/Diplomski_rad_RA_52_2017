@@ -209,3 +209,8 @@ C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-servic
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\restaurant-service.pdb
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\restaurant-service.genruntimeconfig.cache
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\ref\restaurant-service.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

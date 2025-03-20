@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0z8sBojs/NQ=",
+  "dgSpecHash": "pyr6LFtmtGA=",
   "success": true,
   "projectFilePath": "C:\\Users\\Aleksa\\Desktop\\Diplomski_rad\\Diplomski_rad_RA_52_2017\\user-service\\user-service.AppHost\\user-service.AppHost.csproj",
   "expectedPackageFiles": [
@@ -63,7 +63,8 @@
     "C:\\Users\\Aleksa\\.nuget\\packages\\polly.core\\8.4.2\\polly.core.8.4.2.nupkg.sha512",
     "C:\\Users\\Aleksa\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.1\\system.diagnostics.eventlog.8.0.1.nupkg.sha512",
     "C:\\Users\\Aleksa\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
-    "C:\\Users\\Aleksa\\.nuget\\packages\\yamldotnet\\16.0.0\\yamldotnet.16.0.0.nupkg.sha512"
+    "C:\\Users\\Aleksa\\.nuget\\packages\\yamldotnet\\16.0.0\\yamldotnet.16.0.0.nupkg.sha512",
+    "C:\\Users\\Aleksa\\.nuget\\packages\\microsoft.net.sdk.compilers.toolset\\9.0.200\\microsoft.net.sdk.compilers.toolset.9.0.200.nupkg.sha512"
   ],
   "logs": []
 }

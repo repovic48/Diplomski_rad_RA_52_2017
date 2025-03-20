@@ -15,9 +15,10 @@ namespace user_service.Model
         public bool is_account_active { get; set; }
         public bool is_account_suspended { get; set; }
         public int verification_code { get; set; }
-
+        public string user_type { get; set; }
         public UserDTO(string id, string name, string surname, string password, string email, string address, int postal_code,
-                    string card_number, int loyalty_points, bool is_account_active, bool is_account_suspended, int verification_code)
+                    string card_number, int loyalty_points, bool is_account_active, bool is_account_suspended, int verification_code,
+                    string user_type)
         {
             this.id = id;
             this.name = name;
@@ -31,6 +32,7 @@ namespace user_service.Model
             this.is_account_active = is_account_active;
             this.is_account_suspended = is_account_suspended;
             this.verification_code = verification_code;
+            this.user_type = user_type;
         }
     }
 }

@@ -31,5 +31,7 @@ namespace user_service.Model
             this.address = address;
             this.postal_code = postal_code;
         }
+        public Person() { }
+
     }
 }
