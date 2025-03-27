@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using restaurant_service.Services;
+using restaurant_service.Model;
 using Microsoft.AspNetCore.Authorization;
 
 namespace restaurant_service.Controllers;
@@ -19,5 +20,180 @@ public class RestaurantController : ControllerBase
     public string SayHello()
     {
         return this.restaurant_service.SayHello();
+    }
+
+    [HttpPost("register")]
+    public async Task<IActionResult> Register([FromBody] RestaurantDTO restaurantDto)
+    {
+        if (restaurantDto == null)
+        {
+            return BadRequest("Invalid restaurant data.");
+        }
+        try
+        {
+            var new_restaurant = await restaurant_service.Register(restaurantDto);
+            return CreatedAtAction(nameof(Register), new { id = new_restaurant.id }, new_restaurant);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpPost("addFood")]
+    public async Task<IActionResult> AddFood([FromBody] FoodDTO foodDto)
+    {
+        if (foodDto == null)
+        {
+            return BadRequest("Invalid restaurant data.");
+        }
+        try
+        {
+            var new_food = await restaurant_service.AddFood(foodDto);
+            return CreatedAtAction(nameof(AddFood), new { id = new_food.id }, new_food);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("getAllRestaurants")]
+    public async Task<IActionResult> GetAllRestaurants()
+    {
+        try
+        {
+            var restaurants = await restaurant_service.GetAllRestaurants();
+
+            // If there are no restaurants, return a 404 Not Found
+            if (restaurants == null || restaurants.Count == 0)
+            {
+                return NotFound("No restaurants found.");
+            }
+            
+            return Ok(restaurants);  // Return 200 OK with the list of restaurants
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("getAllFoods")]
+    public async Task<IActionResult> GetAllFoods()
+    {
+        try
+        {
+            var food = await restaurant_service.GetAllFoods();
+
+            // If there are no restaurants, return a 404 Not Found
+            if (food == null || food.Count == 0)
+            {
+                return NotFound("No food found.");
+            }
+            
+            return Ok(food);  // Return 200 OK with the list of restaurants
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpDelete("delete/{email}")]
+    public async Task<IActionResult> DeleteRestaurantByEmail(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return BadRequest("Email cannot be null or empty");
+        }
+
+        var result = await restaurant_service.DeleteRestaurantByEmail(email);
+
+        if (result)
+        {
+            return Ok($"Restaurant with email {email} deleted successfully.");
+        }
+        else
+        {
+            return NotFound($"Restaurant with email {email} not found.");
+        }
+    }
+
+    [HttpDelete("deleteFood/{id}")]
+    public async Task<IActionResult> DeleteFoodById(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            return BadRequest("id cannot be null or empty");
+        }
+
+        var result = await restaurant_service.DeleteFoodById(id);
+
+        if (result)
+        {
+            return Ok($"Food with id {id} deleted successfully.");
+        }
+        else
+        {
+            return NotFound($"Food with id {id} not found.");
+        }
+    }
+    [HttpGet("getFoodsByRestaurantId/{id}")]
+    public async Task<IActionResult> GetFoodsByRestaurantId(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            return BadRequest("id cannot be null or empty");
+        }
+
+        try
+        {
+            var food = await restaurant_service.GetFoodsByRestaurantId(id);
+
+            if (food == null || food.Count == 0)
+            {
+                return NotFound("No food found.");
+            }
+            
+            return Ok(food); 
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("getRestaurantById/{id}")]
+    public async Task<IActionResult> GetRestaurantById(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            return BadRequest("id cannot be null or empty");
+        }
+
+        try
+        {
+            var restraurant = await restaurant_service.GetRestaurantById(id);
+
+            if (restraurant == null)
+            {
+                return NotFound("No restraurant found.");
+            }
+            
+            return Ok(restraurant); 
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
     }
 }

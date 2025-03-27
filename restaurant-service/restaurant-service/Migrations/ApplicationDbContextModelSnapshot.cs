@@ -21,12 +21,15 @@ namespace restaurant_service.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("restaurant_service.Model.Restaurant", b =>
+            modelBuilder.Entity("restaurant_service.Model.Food", b =>
                 {
-                    b.Property<string>("restourant_id")
+                    b.Property<string>("id")
                         .HasColumnType("text");
 
-                    b.Property<string>("address")
+                    b.Property<string>("Restaurantid")
+                        .HasColumnType("text");
+
+                    b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -34,9 +37,73 @@ namespace restaurant_service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("restourant_id");
+                    b.Property<string>("price")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("restourant_id")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("Restaurantid");
+
+                    b.ToTable("Foods");
+                });
+
+            modelBuilder.Entity("restaurant_service.Model.Restaurant", b =>
+                {
+                    b.Property<string>("id")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("account_active")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("account_suspended")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("postal_code")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("verification_code")
+                        .HasColumnType("integer");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("email")
+                        .IsUnique();
 
                     b.ToTable("Restaurants");
+                });
+
+            modelBuilder.Entity("restaurant_service.Model.Food", b =>
+                {
+                    b.HasOne("restaurant_service.Model.Restaurant", null)
+                        .WithMany("menu")
+                        .HasForeignKey("Restaurantid")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("restaurant_service.Model.Restaurant", b =>
+                {
+                    b.Navigation("menu");
                 });
 #pragma warning restore 612, 618
         }
