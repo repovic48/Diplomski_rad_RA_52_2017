@@ -1,7 +1,8 @@
 namespace restaurant_service.Model
 {
+    using System;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Food
     {
@@ -18,17 +19,23 @@ namespace restaurant_service.Model
         public string image { get; set; }
 
         [Required]
-        public string restourant_id { get; set; }
-        
+        public string restaurant_id { get; set; }
+
+        public bool available { get; set; }
+
+        public int discount { get; set; }
+
         public Food() { }
 
-        public Food(string id, string name, string price, string image, string restourant_id)
+        public Food(string id, string name, string price, string image, string restaurant_id, bool available, int discount)
         {
             this.id = id;
             this.name = name;
             this.price = price;
             this.image = image;
-            this.restourant_id = restourant_id;
+            this.restaurant_id = restaurant_id;
+            this.available = available;
+            this.discount = discount;
         }
 
         public Food(FoodDTO foodDTO)
@@ -37,7 +44,9 @@ namespace restaurant_service.Model
             this.name = foodDTO.name;
             this.price = foodDTO.price;
             this.image = foodDTO.image;
-            this.restourant_id = foodDTO.restaurant_id;
+            this.restaurant_id = foodDTO.restaurant_id;
+            this.discount = foodDTO.discount;
+            this.available = foodDTO.available;
         }
     }
 }

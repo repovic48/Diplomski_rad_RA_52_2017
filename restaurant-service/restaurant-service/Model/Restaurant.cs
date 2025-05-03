@@ -53,7 +53,7 @@ namespace restaurant_service.Model
             this.name = restaurantDTO.name;
             this.address = restaurantDTO.address;
             this.email = restaurantDTO.email;
-            this.password = "";  
+            this.password = restaurantDTO.password;
             this.menu = restaurantDTO.menu.Select(f => new Food(f)).ToList();
             this.verification_code = restaurantDTO.verification_code;
             this.account_active = restaurantDTO.account_active;

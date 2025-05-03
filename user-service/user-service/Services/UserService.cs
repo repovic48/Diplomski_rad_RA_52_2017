@@ -96,6 +96,14 @@ namespace user_service.Services
             return await user_repository.DeleteUserByEmail(email);
         }
 
+        public async Task<User> GetUserByEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                throw new ArgumentException("Email cannot be null or empty", nameof(email));
+
+            return await user_repository.GetUserByEmail(email);
+        }
+
         public async Task<List<User>> GetAllUsers()
         {
             return await this.user_repository.GetAllUsers();

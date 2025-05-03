@@ -28,7 +28,8 @@ namespace user_service.Services
                     new Claim(JwtRegisteredClaimNames.Sub, user.id.ToString()),
                     new Claim(JwtRegisteredClaimNames.Email, user.email),
                     new Claim(ClaimTypes.Role, user.user_type.ToString()),
-                    new Claim("is_account_active", user.is_account_active.ToString())
+                    new Claim("is_account_active", user.is_account_active.ToString()),
+                    new Claim("is_account_suspended", user.is_account_suspended.ToString()),
                 ]),
                 Expires = DateTime.UtcNow.AddMinutes(60),
                 SigningCredentials = credentials,

@@ -114,6 +114,26 @@ public class UserController : ControllerBase
         }
     }
 
+    [HttpGet("getByEmail/{email}")]
+    public async Task<IActionResult> GetUserByEmail(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return BadRequest("Email cannot be null or empty");
+        }
+
+        var user = await user_service.GetUserByEmail(email);
+
+        if (user != null)
+        {
+            return Ok(user);
+        }
+        else
+        {
+            return NotFound($"User with email {email} not found.");
+        }
+    }
+
     [HttpPut("update")]
     public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTO)
     {

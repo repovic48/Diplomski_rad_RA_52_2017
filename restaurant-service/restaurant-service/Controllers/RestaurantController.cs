@@ -16,7 +16,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpGet("SayHello")]
-    [Authorize(Roles = "User")]
+    [Authorize(Roles = "Restaurant")]
     public string SayHello()
     {
         return this.restaurant_service.SayHello();
@@ -195,5 +195,110 @@ public class RestaurantController : ControllerBase
         {
             return StatusCode(500, $"Internal server error: {ex.Message}");
         }
+    }
+
+    [HttpGet("getRestaurantByEmail/{email}")]
+    public async Task<IActionResult> GetRestaurantByEmail(string email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return BadRequest("email cannot be null or empty");
+        }
+
+        try
+        {
+            var restraurant = await restaurant_service.GetRestaurantByEmail(email);
+
+            if (restraurant == null)
+            {
+                return NotFound("No restraurant found.");
+            }
+            
+            return Ok(restraurant); 
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] RestaurantDTO restarurantDto)
+    {
+        if (restarurantDto == null)
+        {
+            return BadRequest("Invalid restaurant data.");
+        }
+
+        try
+        {
+            var existingRestaurant = await restaurant_service.Login(restarurantDto);
+
+            if (existingRestaurant == null)
+            {
+                return Unauthorized("Invalid email or password.");
+            }
+
+            return Ok(existingRestaurant); 
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpPut("verify")]
+    public async Task<IActionResult> VerifyAccount([FromBody] RestaurantDTO restaurantDTO)
+    {
+        if (restaurantDTO == null)
+        {
+            return BadRequest("Restaurant data cannot be null.");
+        }
+
+        var verifiedRestaurant = await restaurant_service.VerifyAccount(restaurantDTO);
+        if (verifiedRestaurant == null)
+        {
+            return NotFound("Restaurant not found or verification failed.");
+        }
+
+        return Ok(verifiedRestaurant);
+    }
+
+    [HttpPut("updateFood")]
+    public async Task<IActionResult> UpdateFood([FromBody] FoodDTO foodDTO)
+    {
+        if (foodDTO == null)
+        {
+            return BadRequest("Food data cannot be null.");
+        }
+
+        var verifiedFood = await restaurant_service.UpdateFood(foodDTO);
+        if (verifiedFood == null)
+        {
+            return NotFound("Food not found.");
+        }
+
+        return Ok(verifiedFood);
+    }
+
+    [HttpPut("updateRestaurant")]
+    public async Task<IActionResult> UpdateRestaurant([FromBody] RestaurantDTO restaurantDTO)
+    {
+        if (restaurantDTO == null)
+        {
+            return BadRequest("Restaurant data cannot be null.");
+        }
+
+        var verifiedRestaurant = await restaurant_service.UpdateRestaurant(restaurantDTO);
+        if (verifiedRestaurant == null)
+        {
+            return NotFound("Restaurant not found.");
+        }
+
+        return Ok(verifiedRestaurant);
     }
 }

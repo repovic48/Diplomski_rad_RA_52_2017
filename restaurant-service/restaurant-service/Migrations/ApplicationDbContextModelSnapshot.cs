@@ -29,6 +29,12 @@ namespace restaurant_service.Migrations
                     b.Property<string>("Restaurantid")
                         .HasColumnType("text");
 
+                    b.Property<bool>("available")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("discount")
+                        .HasColumnType("integer");
+
                     b.Property<string>("image")
                         .IsRequired()
                         .HasColumnType("text");
@@ -41,7 +47,7 @@ namespace restaurant_service.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("restourant_id")
+                    b.Property<string>("restaurant_id")
                         .IsRequired()
                         .HasColumnType("text");
 

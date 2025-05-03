@@ -22,7 +22,7 @@ services:
       PORT: 8081
       DB_HOST: db  # Set the database service name (container name)
       DB_PORT: 5432
-      DB_NAME: DiplomskiDB
+      DB_NAME: DiplomskiDB2
       DB_USER: postgres
       DB_PASSWORD: nekatamosifra1
     depends_on:
@@ -39,7 +39,7 @@ services:
       PORT: 8082
       DB_HOST: db  # Set the database service name (container name)
       DB_PORT: 5432
-      DB_NAME: DiplomskiDB
+      DB_NAME: DiplomskiDB2
       DB_USER: postgres
       DB_PASSWORD: nekatamosifra1
     depends_on:
@@ -56,7 +56,7 @@ services:
       PORT: 8083
       DB_HOST: db  # Set the database service name (container name)
       DB_PORT: 5432
-      DB_NAME: DiplomskiDB
+      DB_NAME: DiplomskiDB2
       DB_USER: postgres
       DB_PASSWORD: nekatamosifra1
     depends_on:
@@ -73,7 +73,7 @@ services:
       PORT: 8084
       DB_HOST: db  # Set the database service name (container name)
       DB_PORT: 5432
-      DB_NAME: DiplomskiDB
+      DB_NAME: DiplomskiDB2
       DB_USER: postgres
       DB_PASSWORD: nekatamosifra1
     depends_on:
@@ -87,7 +87,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: nekatamosifra1
-      POSTGRES_DB: DiplomskiDB
+      POSTGRES_DB: DiplomskiDB2
     ports:
       - "5432:5432"  # Expose PostgreSQL to the host system
     restart: always

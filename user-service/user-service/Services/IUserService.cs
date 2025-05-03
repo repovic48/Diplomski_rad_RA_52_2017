@@ -12,5 +12,6 @@ namespace user_service.Services
         public Task<bool> DeleteUserByEmail(string email);
         public Task<User?> VerifyAccount(UserDTO userDTO);
         public Task<User?> UpdateUser(UserDTO userDTO);
+        public Task<User> GetUserByEmail(string email);
     }
 }
