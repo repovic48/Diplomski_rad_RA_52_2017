@@ -32,7 +32,7 @@ namespace restaurant_service.Services
                 verification_code = new Random().Next(1000, 10000)
             };
 
-            await SendEmail(new_restaurant.email, new_restaurant.verification_code);
+            await SendEmail(new_restaurant.email, "Potvrda registracije", $"Vas kod za potvrdu registracije: {new_restaurant.verification_code}");
             return await this.restaurant_repository.Register(new_restaurant);
         }
 
@@ -57,6 +57,24 @@ namespace restaurant_service.Services
 
             return await this.restaurant_repository.AddFood(new_food);
         }
+
+        public async Task<Notification?> CreateNotification(NotificationDTO new_notificationDTO)
+        {
+            Notification new_notification = new Notification(new_notificationDTO)
+            {
+                id = Guid.NewGuid().ToString()
+            };
+
+            return await this.restaurant_repository.CreateNotification(new_notification);
+        }
+
+        public  async Task<List<Notification>> GetAllNotifications()
+        {
+            var notifications = await this.restaurant_repository.GetAllNotifications();
+
+            return notifications;
+        }
+
 
         public async Task<List<Restaurant>> GetAllRestaurants()
         {
@@ -166,14 +184,32 @@ namespace restaurant_service.Services
             return null;
         }
 
-        public async Task SendEmail(string recipientEmail, int verificationCode)
+        public async Task<List<string>> NotifyUsers(string notification_id, List<string> emails)
+        {
+            // Assuming GetNotificationById is an async method
+            var notification = await restaurant_repository.GetNotificationById(notification_id);
+
+            if (notification == null)
+            {
+                throw new Exception("Notification not found.");
+            }
+
+            foreach (string email in emails)
+            {
+                await SendEmail(email, notification.subject, notification.content);
+            }
+            return emails;
+        }
+
+
+        public async Task SendEmail(string recipientEmail, string email_subject, string email_body)
         {
             string sender_email = "narucirs.podrska@gmail.com";
             MailMessage mailMessage = new MailMessage(sender_email, recipientEmail);
             mailMessage.From = new MailAddress(sender_email);
             mailMessage.To.Add(recipientEmail);
-            mailMessage.Subject = "Potvrda registracije";
-            mailMessage.Body = $"Vas kod za potvrdu registracije: {verificationCode}";
+            mailMessage.Subject = email_subject; //"Potvrda registracije";
+            mailMessage.Body = email_body; //$"Vas kod za potvrdu registracije: {verificationCode}";
             
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com");
             smtpClient.Host = "smtp.gmail.com";

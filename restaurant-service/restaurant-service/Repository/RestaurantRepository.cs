@@ -139,5 +139,27 @@ namespace restaurant_service.Repositories
 
             return await context.Restaurants.FirstOrDefaultAsync(u => u.email == email);
         }
+        public async Task<Notification> CreateNotification(Notification new_notification)
+        {
+            if (new_notification == null)
+                throw new ArgumentNullException(nameof(new_notification), "New notification cannot be null");
+
+            await context.Notifications.AddAsync(new_notification);
+            await context.SaveChangesAsync();
+            return new_notification;
+        }
+        public async Task<List<Notification>> GetAllNotifications()
+        {
+            return await context.Notifications.ToListAsync();
+        }
+
+
+        public async Task<Notification> GetNotificationById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentException("Id cannot be null or empty", nameof(id));
+
+            return await context.Notifications.FirstOrDefaultAsync(u => u.id == id);
+        }
     }
 }

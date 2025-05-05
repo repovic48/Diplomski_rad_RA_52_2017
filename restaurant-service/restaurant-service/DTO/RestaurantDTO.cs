@@ -8,6 +8,7 @@ namespace restaurant_service.Model
         public string email { get; set; }
         public string password { get; set; }
         public List<FoodDTO> menu { get; set; }
+        public List<NotificationDTO> notifications { get; set; }
         public int verification_code { get; set; }
         public bool account_active { get; set; }
         public bool account_suspended { get; set; }
@@ -15,7 +16,8 @@ namespace restaurant_service.Model
 
         public RestaurantDTO() { }
 
-        public RestaurantDTO(string id, string name, string address, string email, string password, List<FoodDTO> menu, int verificationCode, bool accountActive, bool accountSuspended, int postal_code)
+        public RestaurantDTO(string id, string name, string address, string email, string password, List<FoodDTO> menu, 
+        int verificationCode, bool accountActive, bool accountSuspended, int postal_code, List<NotificationDTO> notifications)
         {
             this.id = id;
             this.name = name;
@@ -27,6 +29,7 @@ namespace restaurant_service.Model
             this.account_active = accountActive;
             this.account_suspended = accountSuspended;
             this.postal_code = postal_code;
+            this.notifications = notifications;
         }
     }
 }

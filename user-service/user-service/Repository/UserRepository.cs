@@ -80,5 +80,11 @@ namespace user_service.Repositories
             return await context.Users
                 .FirstOrDefaultAsync(user => user.email == email);
         }
+        public async Task<List<string>> GetAllEmails()
+        {
+            return await context.Users
+                                .Select(u => u.email) 
+                                .ToListAsync();        
+        }
     }
 }

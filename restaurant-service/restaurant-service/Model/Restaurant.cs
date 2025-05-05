@@ -22,6 +22,8 @@ namespace restaurant_service.Model
 
         public List<Food> menu { get; set; } = new List<Food>();
 
+        public List<Notification> notifications { get; set; } = new List<Notification>();
+
         public int verification_code { get; set; }
 
         public bool account_active { get; set; }
@@ -45,6 +47,7 @@ namespace restaurant_service.Model
             this.account_active = false;
             this.account_suspended = false;
             this.postal_code = postal_code;
+            this.notifications = new List<Notification>();
         }
 
         public Restaurant(RestaurantDTO restaurantDTO)
@@ -55,6 +58,7 @@ namespace restaurant_service.Model
             this.email = restaurantDTO.email;
             this.password = restaurantDTO.password;
             this.menu = restaurantDTO.menu.Select(f => new Food(f)).ToList();
+            this.notifications = restaurantDTO.notifications.Select(f => new Notification(f)).ToList();
             this.verification_code = restaurantDTO.verification_code;
             this.account_active = restaurantDTO.account_active;
             this.account_suspended = restaurantDTO.account_suspended;

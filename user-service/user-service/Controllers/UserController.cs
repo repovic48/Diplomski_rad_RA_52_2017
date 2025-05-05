@@ -94,6 +94,27 @@ public class UserController : ControllerBase
         }
     }
 
+    [HttpGet("getAllEmails")]
+    public async Task<IActionResult> GetAllEmails()
+    {
+        try
+        {
+            var emails = await user_service.GetAllEmails();
+
+            // If there are no emails, return a 404 Not Found
+            if (emails == null || emails.Count == 0)
+            {
+                return NotFound("No users found.");
+            }
+            
+            return Ok(emails);  // Return 200 OK with the list of emails
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
     [HttpDelete("delete/{email}")]
     public async Task<IActionResult> DeleteUserByEmail(string email)
     {

@@ -66,6 +66,66 @@ public class RestaurantController : ControllerBase
         }
     }
 
+    [HttpPost("createNotification")]
+    public async Task<IActionResult> CreateNotification([FromBody] NotificationDTO notificationDto)
+    {
+        if (notificationDto == null)
+        {
+            return BadRequest("Invalid restaurant data.");
+        }
+        try
+        {
+            var new_notification = await restaurant_service.CreateNotification(notificationDto);
+            return CreatedAtAction(nameof(CreateNotification), new { id = new_notification.id }, new_notification);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpGet("getAllNotifications")]
+    public async Task<IActionResult> GetAllNotifications()
+    {
+        try
+        {
+            var notifications = await restaurant_service.GetAllNotifications();
+
+            // If there are no notifications, return a 404 Not Found
+            if (notifications == null || notifications.Count == 0)
+            {
+                return NotFound("No notifications found.");
+            }
+            
+            return Ok(notifications);  // Return 200 OK with the list of notifications
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+    [HttpPost("notifyUsers/{notification_id}")]
+    public async Task<IActionResult> NotifyUsers(
+        [FromRoute] string notification_id,
+        [FromBody] List<string> emails)
+    {
+        try
+        {
+            await restaurant_service.NotifyUsers(notification_id, emails);
+            return Ok(emails);
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
+
     [HttpGet("getAllRestaurants")]
     public async Task<IActionResult> GetAllRestaurants()
     {

@@ -25,7 +25,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("order-service.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32b7133b75c49ed7c6300750f462b0afb95021fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46495a59e4d731f82111c4803223c6ffd21944ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("order-service.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("order-service.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

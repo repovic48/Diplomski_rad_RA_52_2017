@@ -148,6 +148,10 @@ namespace user_service.Services
             }
         }
 
+        public async Task<List<string>> GetAllEmails()
+        {
+            return await this.user_repository.GetAllEmails();
+        }
         
     } 
 }

@@ -13,5 +13,6 @@ namespace user_service.Services
         public Task<User?> VerifyAccount(UserDTO userDTO);
         public Task<User?> UpdateUser(UserDTO userDTO);
         public Task<User> GetUserByEmail(string email);
+        public Task<List<string>> GetAllEmails();
     }
 }
