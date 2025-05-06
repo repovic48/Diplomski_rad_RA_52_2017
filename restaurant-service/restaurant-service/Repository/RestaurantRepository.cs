@@ -91,7 +91,16 @@ namespace restaurant_service.Repositories
                 .Where(f => f.restaurant_id == id)
                 .ToListAsync();
         }
-
+        public async Task<List<Notification>> GetNotificationsByRestaurantId(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentException("Id cannot be null or empty", nameof(id));
+                
+            return await context.Notifications
+                .Where(f => f.restaurant_id == id)
+                .ToListAsync();
+        }
+        
         public async Task<Restaurant> UpdateRestaurant(Restaurant updatedRestaurant)
         {
             if (updatedRestaurant == null)
@@ -161,5 +170,21 @@ namespace restaurant_service.Repositories
 
             return await context.Notifications.FirstOrDefaultAsync(u => u.id == id);
         }
+
+        public async Task<bool> DeleteNotificationById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentException("Id cannot be null or empty", nameof(id));
+
+            var notification = await context.Notifications.FirstOrDefaultAsync(u => u.id == id);
+
+            if (notification == null)
+                return false;
+
+            context.Notifications.Remove(notification);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
     }
 }

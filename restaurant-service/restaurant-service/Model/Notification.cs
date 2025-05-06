@@ -18,17 +18,17 @@ namespace restaurant_service.Model
         public DateTime date_of_creation { get; set; }
 
         [Required]
-        public string restaurant_email { get; set; }
+        public string restaurant_id { get; set; }
 
         public Notification() { }
 
-        public Notification(string id, string subject, string content, string restaurant_email)
+        public Notification(string id, string subject, string content, string restaurant_id)
         {
             this.id = id;
             this.subject = subject;
             this.content = content;
             this.date_of_creation = DateTime.UtcNow;
-            this.restaurant_email = restaurant_email;
+            this.restaurant_id = restaurant_id;
         }
 
         public Notification(NotificationDTO dto)
@@ -37,7 +37,7 @@ namespace restaurant_service.Model
             this.subject = dto.subject;
             this.content = dto.content;
             this.date_of_creation = dto.date_of_creation;
-            this.restaurant_email = dto.restaurant_email;
+            this.restaurant_id = dto.restaurant_id;
         }
     }
 }

@@ -21,5 +21,6 @@ namespace restaurant_service.Services
         public Task<Notification?> CreateNotification(NotificationDTO new_notificationDTO);
         public  Task<List<Notification>> GetAllNotifications();
         public  Task<List<string>> NotifyUsers(string notification_id, List<string> emails);
+        public Task<bool> DeleteNotificationById(string id);
     }
 }

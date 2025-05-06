@@ -207,6 +207,27 @@ public class RestaurantController : ControllerBase
             return NotFound($"Food with id {id} not found.");
         }
     }
+
+    [HttpDelete("deleteNotification/{id}")]
+    public async Task<IActionResult> DeleteNotificationById(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            return BadRequest("id cannot be null or empty");
+        }
+
+        var result = await restaurant_service.DeleteNotificationById(id);
+
+        if (result)
+        {
+            return Ok($"Notification with id {id} deleted successfully.");
+        }
+        else
+        {
+            return NotFound($"Notification with id {id} not found.");
+        }
+    }
+
     [HttpGet("getFoodsByRestaurantId/{id}")]
     public async Task<IActionResult> GetFoodsByRestaurantId(string id)
     {

@@ -19,6 +19,8 @@ namespace restaurant_service.Repositories
         public Task<Food> UpdateFood(Food updatedFood);
         public Task<Notification> CreateNotification(Notification new_notification);
         public  Task<List<Notification>> GetAllNotifications();
+        public  Task<List<Notification>> GetNotificationsByRestaurantId(string id);
         public  Task<Notification> GetNotificationById(string id);
+        public Task<bool> DeleteNotificationById(string id);
     }
 }

@@ -74,7 +74,7 @@ namespace restaurant_service.Migrations
                     b.Property<DateTime>("date_of_creation")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("restaurant_email")
+                    b.Property<string>("restaurant_id")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -142,7 +142,8 @@ namespace restaurant_service.Migrations
                 {
                     b.HasOne("restaurant_service.Model.Restaurant", null)
                         .WithMany("notifications")
-                        .HasForeignKey("Restaurantid");
+                        .HasForeignKey("Restaurantid")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("restaurant_service.Model.Restaurant", b =>

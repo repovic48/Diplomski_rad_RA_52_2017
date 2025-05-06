@@ -81,6 +81,7 @@ namespace restaurant_service.Services
             var restaurants = await this.restaurant_repository.GetAllRestaurants();
             foreach (var restaurant in restaurants)
             {
+                restaurant.notifications = await restaurant_repository.GetNotificationsByRestaurantId(restaurant.id);
                 restaurant.menu = await restaurant_repository.GetFoodsByRestaurantId(restaurant.id);
             }
             return restaurants;
@@ -125,6 +126,8 @@ namespace restaurant_service.Services
                 throw new ArgumentException("Restaurant not found", nameof(id));
 
             restaurant.menu = await restaurant_repository.GetFoodsByRestaurantId(restaurant.id);
+            restaurant.notifications = await restaurant_repository.GetNotificationsByRestaurantId(restaurant.id);
+
             return restaurant;
         }
 
@@ -137,6 +140,7 @@ namespace restaurant_service.Services
             if (restaurant == null)
                 throw new ArgumentException("Restaurant not found", nameof(email));
 
+            restaurant.notifications = await restaurant_repository.GetNotificationsByRestaurantId(restaurant.id);
             restaurant.menu = await restaurant_repository.GetFoodsByRestaurantId(restaurant.id);
             return restaurant;
         }
@@ -227,6 +231,13 @@ namespace restaurant_service.Services
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
+        }
+        public async Task<bool> DeleteNotificationById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentException("Id cannot be null or empty", nameof(id));
+
+            return await restaurant_repository.DeleteNotificationById(id);
         }
     }
 }

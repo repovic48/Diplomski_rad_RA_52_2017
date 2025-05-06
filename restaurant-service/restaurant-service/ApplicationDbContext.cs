@@ -23,6 +23,11 @@ namespace restaurant_service.DBContext
                 .HasMany(r => r.menu)
                 .WithOne() 
                 .OnDelete(DeleteBehavior.Cascade); 
+
+            modelBuilder.Entity<Restaurant>()
+                .HasMany(r => r.notifications)
+                .WithOne() 
+                .OnDelete(DeleteBehavior.Cascade); 
         }
     }
 }
