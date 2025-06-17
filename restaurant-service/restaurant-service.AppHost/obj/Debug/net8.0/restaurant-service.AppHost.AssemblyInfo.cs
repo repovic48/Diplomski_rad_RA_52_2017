@@ -25,7 +25,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("restaurant-service.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e831267761729beb41fcd0fbd87ea5c58c886800")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b09b664e6b24a5219a94f59eb709d4353e78b0d")]
 [assembly: System.Reflection.AssemblyProductAttribute("restaurant-service.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("restaurant-service.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

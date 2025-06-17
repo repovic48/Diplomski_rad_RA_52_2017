@@ -131,6 +131,18 @@ namespace restaurant_service.Services
             return restaurant;
         }
 
+      public async Task<Food> GetFoodById(string id)
+        {
+            if (string.IsNullOrEmpty(id))
+                throw new ArgumentException("Id cannot be null or empty", nameof(id));
+
+            var food = await restaurant_repository.GetFoodById(id);
+            if (food == null)
+                throw new ArgumentException("Food not found", nameof(id));
+
+            return food;
+        }
+
         public async Task<Restaurant> GetRestaurantByEmail(string email)
         {
             if (string.IsNullOrEmpty(email))

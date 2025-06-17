@@ -19,8 +19,9 @@ namespace restaurant_service.Services
         public Task<Restaurant> GetRestaurantByEmail(string email);
         public Task<Restaurant?> UpdateRestaurant(RestaurantDTO restaurantDTO);
         public Task<Notification?> CreateNotification(NotificationDTO new_notificationDTO);
-        public  Task<List<Notification>> GetAllNotifications();
-        public  Task<List<string>> NotifyUsers(string notification_id, List<string> emails);
+        public Task<List<Notification>> GetAllNotifications();
+        public Task<List<string>> NotifyUsers(string notification_id, List<string> emails);
         public Task<bool> DeleteNotificationById(string id);
+        public Task<Food> GetFoodById(string id);
     }
 }
