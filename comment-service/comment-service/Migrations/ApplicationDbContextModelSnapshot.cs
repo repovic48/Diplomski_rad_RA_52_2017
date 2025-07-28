@@ -46,12 +46,22 @@ namespace comment_service.Migrations
                     b.Property<DateTime>("date")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<bool>("delete_requested")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("reply_to")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("restaurant_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("restaurant_rating")
-                        .HasColumnType("integer");
+                    b.Property<float>("restaurant_rating")
+                        .HasColumnType("real");
 
                     b.PrimitiveCollection<List<string>>("users_that_rated_comment")
                         .IsRequired()

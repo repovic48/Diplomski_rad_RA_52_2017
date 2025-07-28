@@ -10,5 +10,6 @@ namespace order_service.Services
         public Task<List<Order>> GetAllOrders();
         public Task<List<Order>> GetOrdersByCustomerEmail(string email);
         public Task<List<Order>> GetOrdersByRestaurantId(string id);
+        public Task<bool> DeleteAll();
     }
 }

@@ -76,5 +76,20 @@ namespace order_service.Repositories
                 .Where(o => o.restaurant_id == id)
                 .ToListAsync();
         }
+
+        public async Task<bool> DeleteAll()
+        {
+            try
+            {
+                context.Items.RemoveRange(context.Items);
+                context.Orders.RemoveRange(context.Orders);
+                await context.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

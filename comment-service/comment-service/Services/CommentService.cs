@@ -53,6 +53,9 @@ namespace comment_service.Services
             existingComment.users_that_rated_comment = updatedCommentDto.users_that_rated_comment ?? new List<string>();
             existingComment.content = updatedCommentDto.content;
             existingComment.date = updatedCommentDto.date;
+            existingComment.reply_to = updatedCommentDto.reply_to;
+            existingComment.deleted = updatedCommentDto.deleted;
+            existingComment.delete_requested = updatedCommentDto.delete_requested;
 
             return await comment_repository.UpdateComment(existingComment);
         }

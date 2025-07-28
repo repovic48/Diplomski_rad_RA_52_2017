@@ -96,6 +96,11 @@ namespace order_service.Services
             return orders;
         }
 
+        public async Task<bool> DeleteAll()
+        {
+            return await order_repository.DeleteAll();
+        }
+
         public async Task SendEmail(string recipientEmail, string email_subject, string email_body)
         {
             string sender_email = "narucirs.podrska@gmail.com";

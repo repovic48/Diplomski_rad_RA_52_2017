@@ -253,6 +253,32 @@ public class RestaurantController : ControllerBase
         }
     }
 
+
+    [HttpGet("getFoodById/{id}")]
+    public async Task<IActionResult> GetFoodById(string id)
+    {
+        if (string.IsNullOrEmpty(id))
+        {
+            return BadRequest("id cannot be null or empty");
+        }
+
+        try
+        {
+            var food = await restaurant_service.GetFoodById(id);
+
+            if (food == null)
+            {
+                return NotFound("No food found.");
+            }
+            
+            return Ok(food); 
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
     [HttpGet("getRestaurantById/{id}")]
     public async Task<IActionResult> GetRestaurantById(string id)
     {

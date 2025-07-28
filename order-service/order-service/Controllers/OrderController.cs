@@ -20,6 +20,21 @@ public class OrderController : ControllerBase
         return this.order_service.SayHello();
     }
 
+    [HttpDelete("deleteAll")]
+    public async Task<IActionResult> DeleteAll()
+    {
+        try
+        {
+            var deleted = await order_service.DeleteAll();
+
+            return NoContent(); // 204 No Content
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+
     [HttpPost("addOrder")]
     public async Task<IActionResult> AddOrder([FromBody] OrderDTO orderDto)
     {
