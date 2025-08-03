@@ -67,6 +67,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPost("createNotification")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> CreateNotification([FromBody] NotificationDTO notificationDto)
     {
         if (notificationDto == null)
@@ -89,6 +90,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpGet("getAllNotifications")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> GetAllNotifications()
     {
         try
@@ -100,7 +102,7 @@ public class RestaurantController : ControllerBase
             {
                 return NotFound("No notifications found.");
             }
-            
+
             return Ok(notifications);  // Return 200 OK with the list of notifications
         }
         catch (Exception ex)
@@ -110,6 +112,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPost("notifyUsers/{notification_id}")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> NotifyUsers(
         [FromRoute] string notification_id,
         [FromBody] List<string> emails)
@@ -169,6 +172,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpDelete("delete/{email}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> DeleteRestaurantByEmail(string email)
     {
         if (string.IsNullOrEmpty(email))
@@ -189,6 +193,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpDelete("deleteFood/{id}")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> DeleteFoodById(string id)
     {
         if (string.IsNullOrEmpty(id))
@@ -209,6 +214,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpDelete("deleteNotification/{id}")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> DeleteNotificationById(string id)
     {
         if (string.IsNullOrEmpty(id))
@@ -304,31 +310,6 @@ public class RestaurantController : ControllerBase
         }
     }
 
-    [HttpGet("getFoodById/{id}")]
-    public async Task<IActionResult> getFoodById(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            return BadRequest("id cannot be null or empty");
-        }
-
-        try
-        {
-            var food = await restaurant_service.GetFoodById(id);
-
-            if (food == null)
-            {
-                return NotFound("No food found.");
-            }
-            
-            return Ok(food); 
-        }
-        catch (Exception ex)
-        {
-            return StatusCode(500, $"Internal server error: {ex.Message}");
-        }
-    }
-
     [HttpGet("getRestaurantByEmail/{email}")]
     public async Task<IActionResult> GetRestaurantByEmail(string email)
     {
@@ -384,6 +365,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPut("verify")]
+    [Authorize]
     public async Task<IActionResult> VerifyAccount([FromBody] RestaurantDTO restaurantDTO)
     {
         if (restaurantDTO == null)
@@ -401,6 +383,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPut("updateFood")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> UpdateFood([FromBody] FoodDTO foodDTO)
     {
         if (foodDTO == null)
@@ -418,6 +401,7 @@ public class RestaurantController : ControllerBase
     }
 
     [HttpPut("updateRestaurant")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> UpdateRestaurant([FromBody] RestaurantDTO restaurantDTO)
     {
         if (restaurantDTO == null)

@@ -10,5 +10,8 @@ namespace comment_service.Services
         public Task<List<Comment>> GetAllComments();
         public Task<Comment?> UpdateComment(string id, CommentDTO updatedCommentDto);
         public Task<bool> DeleteComment(string id);
+        public Task<News> AddNews(NewsDTO newsDto);
+        public Task<bool> DeleteNews(string id);
+        public Task<List<News>> GetAllNews();
     }
 }

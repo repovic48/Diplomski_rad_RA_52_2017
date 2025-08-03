@@ -69,7 +69,24 @@ namespace comment_service.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Comments");
+                    b.ToTable("CommentsT");
+                });
+
+            modelBuilder.Entity("comment_service.Model.News", b =>
+                {
+                    b.Property<string>("id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("date_of_creation")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("id");
+
+                    b.ToTable("News");
                 });
 #pragma warning restore 612, 618
         }

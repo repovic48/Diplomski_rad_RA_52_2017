@@ -13,8 +13,8 @@ using comment_service.DBContext;
 namespace comment_service.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250617193650_UpdatedModel24")]
-    partial class UpdatedModel24
+    [Migration("20250730211239_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,12 +49,22 @@ namespace comment_service.Migrations
                     b.Property<DateTime>("date")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<bool>("delete_requested")
+                        .HasColumnType("boolean");
+
+                    b.Property<bool>("deleted")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("reply_to")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("restaurant_id")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("restaurant_rating")
-                        .HasColumnType("integer");
+                    b.Property<float>("restaurant_rating")
+                        .HasColumnType("real");
 
                     b.PrimitiveCollection<List<string>>("users_that_rated_comment")
                         .IsRequired()
@@ -62,7 +72,24 @@ namespace comment_service.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Comments");
+                    b.ToTable("CommentsT");
+                });
+
+            modelBuilder.Entity("comment_service.Model.News", b =>
+                {
+                    b.Property<string>("id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("content")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("date_of_creation")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("id");
+
+                    b.ToTable("News");
                 });
 #pragma warning restore 612, 618
         }

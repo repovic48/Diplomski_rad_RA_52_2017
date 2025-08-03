@@ -64,5 +64,25 @@ namespace comment_service.Services
         {
             return await comment_repository.DeleteComment(id);
         }
+
+        public async Task<News> AddNews(NewsDTO newsDto)
+        {
+            News new_news = new News(newsDto)
+            {
+                id = Guid.NewGuid().ToString()
+            };
+
+            return await this.comment_repository.AddNews(new_news);
+        }
+
+        public async Task<bool> DeleteNews(string id)
+        {
+            return await comment_repository.DeleteNews(id);
+        }
+        public async Task<List<News>> GetAllNews()
+        {
+            return await this.comment_repository.GetAllNews();
+        }
+
     }
 }

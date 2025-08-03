@@ -13,5 +13,8 @@ namespace comment_service.Repositories
         Task<Comment?> GetCommentById(string id);
         Task<Comment> UpdateComment(Comment updatedComment);
         Task<bool> DeleteComment(string id);
+        Task<News> AddNews(News newsDto);
+        Task<bool> DeleteNews(string id);
+        Task<List<News>> GetAllNews();
     }
 }

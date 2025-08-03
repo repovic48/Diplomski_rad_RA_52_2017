@@ -7,7 +7,8 @@ namespace comment_service.DBContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Comment> CommentsT { get; set; }
+        public DbSet<News> News { get; set; }
 
     }
 }

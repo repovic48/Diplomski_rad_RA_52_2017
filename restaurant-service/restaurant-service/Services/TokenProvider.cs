@@ -29,6 +29,7 @@ namespace restaurant_service.Services
                     new Claim(JwtRegisteredClaimNames.Email, restaurant.email),
                     new Claim("is_account_active", restaurant.account_active.ToString()),
                     new Claim("is_account_suspended", restaurant.account_suspended.ToString()),
+                    new Claim(ClaimTypes.Role, "Restaurant"),
                 ]),
                 Expires = DateTime.UtcNow.AddMinutes(60),
                 SigningCredentials = credentials,

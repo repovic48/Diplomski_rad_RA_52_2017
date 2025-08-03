@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using comment_service.Services;
 using comment_service.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace comment_service.Controllers
 {
@@ -22,6 +23,7 @@ namespace comment_service.Controllers
         }
 
         [HttpPost("addComment")]
+        [Authorize(Roles = "User")]
         public async Task<IActionResult> AddComment([FromBody] CommentDTO commentDto)
         {
             if (commentDto == null)
@@ -84,8 +86,8 @@ namespace comment_service.Controllers
             }
         }
 
-        // PUT: updateComment/{id}
         [HttpPut("updateComment/{id}")]
+        [Authorize(Roles = "User,Restaurant")]
         public async Task<IActionResult> UpdateComment(string id, [FromBody] CommentDTO updatedDto)
         {
             if (updatedDto == null)
@@ -113,8 +115,8 @@ namespace comment_service.Controllers
             }
         }
 
-        // DELETE: deleteComment/{id}
         [HttpDelete("deleteComment/{id}")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> DeleteComment(string id)
         {
             try
@@ -125,7 +127,68 @@ namespace comment_service.Controllers
                     return NotFound($"No comment found with ID = {id}");
                 }
 
-                return NoContent(); // 204 No Content
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+        [HttpPost("addNews")]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> AddNews([FromBody] NewsDTO newsDto)
+        {
+            if (newsDto == null || string.IsNullOrWhiteSpace(newsDto.content))
+            {
+                return BadRequest("Invalid news data.");
+            }
+
+            try
+            {
+                var newNews = await comment_service.AddNews(newsDto);
+                return CreatedAtAction(nameof(AddNews), new { id = newNews.id }, newNews);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpDelete("deleteNews/{id}")]
+        [Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> DeleteNews(string id)
+        {
+            try
+            {
+                var result = await comment_service.DeleteNews(id);
+                if (!result)
+                {
+                    return NotFound($"No news found with ID = {id}");
+                }
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("getAllNews")]
+        public async Task<IActionResult> getAllNews()
+        {
+            try
+            {
+                var news = await comment_service.GetAllNews();
+
+                if (news == null || news.Count == 0)
+                {
+                    return NotFound("No news found.");
+                }
+
+                return Ok(news);
             }
             catch (Exception ex)
             {

@@ -197,12 +197,6 @@ C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-servic
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets\msbuild.restaurant-service.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets\msbuild.restaurant-service.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets\msbuild.build.restaurant-service.props
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.restaurant-service.props
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.restaurant-service.props
-C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\restaura.0C98A119.Up2Date
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\restaurant-service.dll
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\refint\restaurant-service.dll
@@ -214,3 +208,8 @@ C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-servic
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\Aleksa\Desktop\Diplomski_rad\Diplomski_rad_RA_52_2017\restaurant-service\restaurant-service\obj\Debug\net8.0\staticwebassets.build.json.cache

@@ -95,6 +95,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("getAllEmails")]
+    [Authorize(Roles = "Restaurant")]
     public async Task<IActionResult> GetAllEmails()
     {
         try
@@ -106,7 +107,7 @@ public class UserController : ControllerBase
             {
                 return NotFound("No users found.");
             }
-            
+
             return Ok(emails);  // Return 200 OK with the list of emails
         }
         catch (Exception ex)
@@ -116,6 +117,7 @@ public class UserController : ControllerBase
     }
 
     [HttpDelete("delete/{email}")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> DeleteUserByEmail(string email)
     {
         if (string.IsNullOrEmpty(email))
@@ -156,6 +158,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("update")]
+    [Authorize(Roles = "Administrator")]
     public async Task<IActionResult> UpdateUser([FromBody] UserDTO userDTO)
     {
         if (userDTO == null)
@@ -173,6 +176,7 @@ public class UserController : ControllerBase
     }
 
     [HttpPut("verify")]
+    [Authorize]
     public async Task<IActionResult> VerifyAccount([FromBody] UserDTO userDTO)
     {
         if (userDTO == null)

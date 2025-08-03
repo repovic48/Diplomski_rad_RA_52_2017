@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using order_service.Services;
 using order_service.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace order_service.Controllers;
 
@@ -126,6 +127,7 @@ public class OrderController : ControllerBase
     }
 
     [HttpGet("GetOrdersByCustomerEmail/{email}")]
+    [Authorize(Roles = "User")]
     public async Task<IActionResult> GetOrdersByCustomerEmail(string email)
     {
         if (string.IsNullOrEmpty(email))
@@ -141,8 +143,8 @@ public class OrderController : ControllerBase
             {
                 return NotFound("No order found.");
             }
-            
-            return Ok(order); 
+
+            return Ok(order);
         }
         catch (Exception ex)
         {
