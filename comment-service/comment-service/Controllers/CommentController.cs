@@ -87,7 +87,7 @@ namespace comment_service.Controllers
         }
 
         [HttpPut("updateComment/{id}")]
-        [Authorize(Roles = "User,Restaurant")]
+        [Authorize(Roles = "User,Restaurant,Administrator")]
         public async Task<IActionResult> UpdateComment(string id, [FromBody] CommentDTO updatedDto)
         {
             if (updatedDto == null)
